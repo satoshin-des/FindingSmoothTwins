@@ -6,6 +6,9 @@ The zip-file is zipped with **7-zip**, so please unzip with 7-zip.
 ```sh
 $ sudo apt install p7zip-full p7zip-rar
 
+# ----------------------------------------
+# Example of result
+# ----------------------------------------
 Reading package lists... Done
 Building dependency tree... Done
 Reading state information... Done
@@ -24,10 +27,85 @@ Unpacking p7zip-rar (16.02-3build1) ...
 Setting up p7zip-rar (16.02-3build1) ...
 ```
 The zip-file is locked with password, and the password is only written in my letter. If the letter is accepted and published, then I will publish the source codes.
+```sh
+$ 7z x FindingSmoothTwins.zip
+
+# ----------------------------------------
+# Example of result
+# ----------------------------------------
+7-Zip [64] 16.02 : Copyright (c) 1999-2016 Igor Pavlov : 2016-05-21
+p7zip Version 16.02 (locale=en_US.UTF-8,Utf16=on,HugeFiles=on,64 bits,2 CPUs Intel(R) Xeon(R) CPU @ 2.20GHz (406F0),ASM,AES-NI)
+
+Scanning the drive for archives:
+1 file, 8628 bytes (9 KiB)
+
+Extracting archive: FindingSmoothTwins.zip
+--
+Path = FindingSmoothTwins.zip
+Type = zip
+Physical Size = 8628
+
+
+Enter password (will not be echoed):
+Everything is Ok
+
+Folders: 3
+Files: 5
+Size:       32316
+Compressed: 8628
+```
 
 ## Setups
 
 To compile and run the sources, you needs Python, Cython, SageMath.
 Please install previously.
+```sh
+FindingSmoothTwins$ sudo apt install sagemath
+
+# ----------------------------------------
+# Example of result
+# ----------------------------------------
+...
+Setting up at-spi2-core (2.44.0-3) ...
+Processing triggers for sgml-base (1.30) ...
+Setting up docutils-common (0.17.1+dfsg-2) ...
+Processing triggers for sgml-base (1.30) ...
+Setting up python3-docutils (0.17.1+dfsg-2) ...
+Setting up python3-sphinx (4.3.2-1) ...
+Setting up python3-sage (9.5-4) ...
+Setting up sagemath (9.5-4) ...
+Setting up python3-sagetex (3.6+ds-2) ...
+Setting up sagetex (3.6+ds-2) ...
+Setting up sagemath-jupyter (9.5-4) ...
+Processing triggers for tex-common (6.17) ...
+Running updmap-sys. This may take some time... done.
+Running mktexlsr /var/lib/texmf ... done.
+Building format(s) --all.
+	This may take some time... done.
+```
 
 ## Installation
+
+Please run ``Build.sh`` to build the cython sources.
+
+```sh
+FindingSmoothTwins$ sh Build.sh
+
+Compiling FLSVPSmoothTwins.pyx because it changed.
+Compiling MySmoothTwins.pyx because it changed.
+[1/2] Cythonizing FLSVPSmoothTwins.pyx
+[2/2] Cythonizing MySmoothTwins.pyx
+running build_ext
+building 'FLSVPSmoothTwins' extension
+creating build/temp.linux-x86_64-cpython-313
+x86_64-linux-gnu-gcc -fno-strict-overflow -Wsign-compare -DNDEBUG -g -O2 -Wall -g -fstack-protector-strong -Wformat -Werror=format-security -g -fwrapv -O2 -fPIC -I/usr/include/python3.13 -c FLSVPSmoothTwins.c -o build/temp.linux-x86_64-cpython-313/FLSVPSmoothTwins.o -O3 -march=native -mtune=native -mfpmath=both -ffast-math -funroll-loops -flto=auto -fopenmp
+creating build/lib.linux-x86_64-cpython-313
+x86_64-linux-gnu-gcc -shared -Wl,-O1 -Wl,-Bsymbolic-functions -Wl,-Bsymbolic-functions -g -fwrapv -O2 build/temp.linux-x86_64-cpython-313/FLSVPSmoothTwins.o -L/usr/lib/x86_64-linux-gnu -o build/lib.linux-x86_64-cpython-313/FLSVPSmoothTwins.cpython-313-x86_64-linux-gnu.so
+lto-wrapper: warning: using serial compilation of 3 LTRANS jobs
+building 'MySmoothTwins' extension
+x86_64-linux-gnu-gcc -fno-strict-overflow -Wsign-compare -DNDEBUG -g -O2 -Wall -g -fstack-protector-strong -Wformat -Werror=format-security -g -fwrapv -O2 -fPIC -I/usr/include/python3.13 -c MySmoothTwins.c -o build/temp.linux-x86_64-cpython-313/MySmoothTwins.o -O3 -march=native -mtune=native -mfpmath=both -ffast-math -funroll-loops -flto=auto -fopenmp
+x86_64-linux-gnu-gcc -shared -Wl,-O1 -Wl,-Bsymbolic-functions -Wl,-Bsymbolic-functions -g -fwrapv -O2 build/temp.linux-x86_64-cpython-313/MySmoothTwins.o -L/usr/lib/x86_64-linux-gnu -o build/lib.linux-x86_64-cpython-313/MySmoothTwins.cpython-313-x86_64-linux-gnu.so
+lto-wrapper: warning: using serial compilation of 3 LTRANS jobs
+copying build/lib.linux-x86_64-cpython-313/FLSVPSmoothTwins.cpython-313-x86_64-linux-gnu.so -> 
+copying build/lib.linux-x86_64-cpython-313/MySmoothTwins.cpython-313-x86_64-linux-gnu.so -> 
+```
