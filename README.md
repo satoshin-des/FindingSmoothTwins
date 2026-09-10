@@ -1,5 +1,16 @@
 # FindingSmoothTwins
 
+## Environment
+
+We conducted experiments on the below environments.
+
+- Ubuntu 22.04
+- dash  0.5.11+git20210903+057cd650a4ed-3build1
+- SageMath 10.7
+- Python 3.10.12
+- Cython 3.2.1
+- fpylll 0.6.4
+
 ## The Way To Unzip
 
 The zip-file is zipped with **7-zip**, so please unzip with 7-zip.
