@@ -97,3 +97,36 @@ lto-wrapper: warning: using serial compilation of 3 LTRANS jobs
 copying build/lib.linux-x86_64-cpython-313/FLSVPSmoothTwins.cpython-313-x86_64-linux-gnu.so -> 
 copying build/lib.linux-x86_64-cpython-313/MySmoothTwins.cpython-313-x86_64-linux-gnu.so -> 
 ```
+
+## Option
+
+To run the sources, you can assign the options. The below are the options:
+- ``-d``: You can set the dimension of lattice i.e. the number of prime numbers such as ``-d 60``
+- ``-f``: If you assign this option, you can run full-lattice SVP.
+- ``-p``: If you assign this option, you can output graph.
+
+```
+FindingSmoothTwinsSVP$ sage Main.py -d 50 -f
+
+# ----------------------------------------
+# Example of result
+# ----------------------------------------
+[1]: factor basis:
+|   [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101, 103, 107, 109, 113, 127, 131, 137, 139, 149, 151, 157, 163, 167, 173, 179, 181, 191, 193, 197, 199, 211, 223, 227, 229]
+|
+
+...
+
+[57] Smooth twins obtained from "main" lattice:
+|   [0, 4, 4, -4, 3, 0, 0, 0, 8, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, -6, 0, 6, -6, -6, 0, 7, 0, 0, 0, 0, -7, -7, 0, 0, -7, 0, 0, 0, -7, 7, 0, 0, 0, 0, 8, 0, 0, 0, 0, 0, 0]
+|   r=3571120987915824, r+1=3571120987915825
+|
+[58] Smooth twins obtained from "main" lattice:
+|   [0, -8, -4, 4, 6, -3, 0, -8, 4, 0, 0, 5, -5, 0, -5, 0, 0, 0, 6, 0, 0, 6, 0, 0, -6, 0, 0, -7, 0, 0, -7, 0, 0, 0, 7, 0, 7, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+|   r=12071155851000575, r+1=12071155851000576
+|
+[59] Smooth twins obtained from "main" lattice:
+|   [0, 4, -2, 0, -3, 0, 4, -4, 4, 0, -5, 0, -5, 0, 5, -6, 0, 6, 0, 0, -12, 0, 0, 0, -6, 0, 7, 7, 7, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, -7, 0, 0, 0, 0, 0, 0, 0, 0]
+|   r=1462012463548623, r+1=1462012463548624
+|
+```
