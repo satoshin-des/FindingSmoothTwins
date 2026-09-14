@@ -106,7 +106,7 @@ To run the sources, you can assign the options. The below are the options:
 - ``-f``: If you assign this option, you can run full-lattice SVP.
 - ``-p``: If you assign this option, you can output graph.
 
-```
+```sh
 FindingSmoothTwinsSVP$ sage Main.py -d 50 -f
 
 # ----------------------------------------
